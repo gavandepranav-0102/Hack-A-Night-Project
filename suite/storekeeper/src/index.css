@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  @apply bg-navy-950 text-white antialiased font-sans;
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl
+           shadow-[0_8px_32px_rgba(0,0,0,0.35)];
+  }
+  .glass-hover {
+    @apply transition duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.14]
+           hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)];
+  }
+  .field {
+    @apply w-full rounded-lg border border-white/15 bg-navy-950/50 px-3 py-2.5 text-sm text-white
+           placeholder:text-white/40 outline-none transition
+           focus:border-safety focus:ring-2 focus:ring-safety/30;
+  }
+  .field-error { @apply border-red-400/70 focus:border-red-400 focus:ring-red-400/30; }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-safety px-5 py-2.5 text-sm font-semibold
+           text-navy-950 shadow-lg shadow-safety/20 transition duration-200
+           hover:bg-safety-dark hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-safety/60 disabled:opacity-60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-2.5
+           text-sm font-medium text-white transition duration-200 hover:bg-white/15 hover:border-white/40
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-safety/60;
+  }
+}

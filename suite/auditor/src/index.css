@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-size: 18px; }
+  body { @apply bg-navy-950 font-sans text-base text-white antialiased; }
+  h1, h2, h3 { @apply font-display tracking-wide; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-hazard; }
+}
+@layer components {
+  .glass { @apply rounded-2xl border border-white/15 bg-navy-900/60 shadow-xl shadow-black/30 backdrop-blur-md; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-base font-semibold transition active:scale-95; }
+  .btn-hazard { @apply btn bg-hazard text-navy-950 hover:bg-yellow-300; }
+  .btn-ghost { @apply btn border border-white/20 text-white hover:bg-white/10; }
+  .hazard-bar { background: repeating-linear-gradient(-45deg, #ffc20e 0 12px, #0b1b33 12px 24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

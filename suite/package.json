@@ -1,0 +1,12 @@
+{
+  "name": "buildproof-suite",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/run.mjs setup",
+    "build": "node scripts/run.mjs build",
+    "start": "node scripts/serve.mjs",
+    "all": "node scripts/run.mjs setup && node scripts/run.mjs build && node scripts/serve.mjs"
+  }
+}
